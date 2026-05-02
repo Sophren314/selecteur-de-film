@@ -42,7 +42,7 @@ angela = film['Angela']
 
 sl.title('Sélecteur de film 🎬')
 
-col1,col2,col3 = sl(columns(3)
+col1,col2,col3 = sl.columns(3)
 with col1:
     pass
 with col2:
