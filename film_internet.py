@@ -40,7 +40,7 @@ else:
         else:
             film_choisi = rd.choice(film_filtre.tolist())
             if len(films) < 20:
-                sl.write(reponse3)
+                sl.warning(reponse3)
             sl.write(reponse2 + film_choisi)
             film.loc[film['films'] == film_choisi, 'Killian'] = 'X'
             index_film = film[film['films'] == film_choisi].index[0]
