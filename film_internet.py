@@ -20,6 +20,13 @@ sl.markdown("""
         background-size: cover;
         background-position: center;
     }
+    .stButton > button {
+    background-color: #0000FF;
+    color: blue;
+    border-radius:20px;
+    border: none;
+    }
+
     </style>
 """, unsafe_allow_html=True)
 
