@@ -12,6 +12,16 @@ import gspread as gs
 import streamlit as sl
 from gspread_dataframe import set_with_dataframe
 
+sl.markdown("""
+    <style>
+    .stApp {
+        background-image: url("");
+        background-size: cover;
+        background-position: center;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
 credentials = sl.secrets["gcp_service_account"]
 client = gs.service_account_from_dict(credentials)
 sheet = client.open('liste de film')
