@@ -3,7 +3,7 @@ backgroundColor = "#D03533"
 textColor = "#CEDCDC"
 
 .stButton > button {
-    background-color: #FF4B4B;
+    background-color: #0000FF;
     color: blue;
     border-radius:20px;
     border: none;
