@@ -5,6 +5,6 @@ textColor = "#CEDCDC"
 .stButton > button {
     background-color: #FF4B4B;
     color: blue;
-    border-radius:20px
+    border-radius:20px;
     border: none;
 }
