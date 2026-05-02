@@ -29,7 +29,6 @@ angela = film['Angela']
 
 sl.title('Sélecteur de film 🎬')
 
-sl.audio('https://www.youtube.com/watch?v=T_NKi5KHUdI&list=RDT_NKi5KHUdI&start_radio=1')
 
 if len(films) == 0:
     sl.write(reponse1)
