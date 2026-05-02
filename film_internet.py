@@ -47,24 +47,25 @@ col1,col2 = sl.columns(2)
 if len(films) == 0:
     sl.write(reponse1)
 else:
-    if sl.button('Killian'):
-        mask = killian == 'O'
-        film_filtre = films[mask]
-        if len(film_filtre) == 0:
-            sl.write(reponse4)
-        else:
-            film_choisi = rd.choice(film_filtre.tolist())
-            if len(films) < 20:
-                sl.write(reponse3)
-            sl.write(reponse2 + film_choisi)
-            film.loc[film['films'] == film_choisi, 'Killian'] = 'X'
-            index_film = film[film['films'] == film_choisi].index[0]
-            val_killian = film.loc[index_film, 'Killian']
-            val_angela = film.loc[index_film, 'Angela']
-            if val_angela == 'X' and val_killian == 'X':
-                film = film[film['films'] != film_choisi]
-            feuille.clear()
-            set_with_dataframe(feuille, film)
+    with col2:
+        if sl.button('Killian'):
+            mask = killian == 'O'
+            film_filtre = films[mask]
+            if len(film_filtre) == 0:
+                sl.write(reponse4)
+            else:
+                film_choisi = rd.choice(film_filtre.tolist())
+                if len(films) < 20:
+                    sl.write(reponse3)
+                sl.write(reponse2 + film_choisi)
+                film.loc[film['films'] == film_choisi, 'Killian'] = 'X'
+                index_film = film[film['films'] == film_choisi].index[0]
+                val_killian = film.loc[index_film, 'Killian']
+                val_angela = film.loc[index_film, 'Angela']
+                if val_angela == 'X' and val_killian == 'X':
+                    film = film[film['films'] != film_choisi]
+                feuille.clear()
+                set_with_dataframe(feuille, film)
     with col1:
         if sl.button('Angela'):
             mask = angela == 'O'
@@ -84,6 +85,11 @@ else:
                     film = film[film['films'] != film_choisi]
                 feuille.clear()
                 set_with_dataframe(feuille, film)
+col1,col2,col3 = sl.columns(3)
+with col1:
+    pass
+with col3:
+    pass
     with col2:
         if sl.button('Nous deux'):
             mask = (killian == 'O') & (angela == 'O')
