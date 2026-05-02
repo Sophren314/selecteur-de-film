@@ -21,7 +21,7 @@ sl.markdown("""
         background-position: center;
     }
     .stButton > button {
-    background-color: #0000FF;
+    background-color: #F0FFFF;
     color: blue;
     border-radius:20px;
     border: none;
