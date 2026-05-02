@@ -42,12 +42,14 @@ angela = film['Angela']
 
 sl.title('Sélecteur de film 🎬')
 
-col1,col2 = sl.columns(2)
+col1,col2,col3 = sl.columns(3)
+with col2:
+    pass
 
 if len(films) == 0:
     sl.write(reponse1)
 else:
-    with col2:
+    with col3:
         if sl.button('Killian'):
             mask = killian == 'O'
             film_filtre = films[mask]
@@ -85,7 +87,7 @@ else:
                     film = film[film['films'] != film_choisi]
                 feuille.clear()
                 set_with_dataframe(feuille, film)
-col1,col2,col3 = sl.columns(3)
+                
 with col1:
     pass
 with col3:
