@@ -15,7 +15,7 @@ from gspread_dataframe import set_with_dataframe
 sl.markdown("""
     <style>
     .stApp {
-        background-image: url("");
+        background-image: url("https://github.com/Sophren314/selecteur-de-film/blob/5181754157c3a2f1e9fbe74affa56b07ba078399/IMG_0144.jpeg");
         background-size: cover;
         background-position: center;
     }
