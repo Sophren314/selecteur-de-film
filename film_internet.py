@@ -10,70 +10,82 @@ import random as rd
 import pandas as pd
 import gspread as gs
 import streamlit as sl
+from gspread_dataframe import set_with_dataframe
 
 credentials = sl.secrets["gcp_service_account"]
 client = gs.service_account_from_dict(credentials)
-sheet= client.open('liste de film')
+sheet = client.open('liste de film')
 feuille = sheet.sheet1
 
 reponse1 = 'ajoute des films nullos'
 reponse2 = 'le film a regarder est: '
 reponse3 = 'pense a ajouter des films nigaud'
-reponse4 ='vous avez tout regarder ensemble !!'
-
+reponse4 = 'vous avez tout regarder ensemble !!'
 
 film = pd.DataFrame(feuille.get_all_records())
-
 films = film['films']
 killian = film['Killian']
 angela = film['Angela']
 
+sl.title('Sélecteur de film 🎬')
+
 if len(films) == 0:
-    print(reponse1)
-else:    
-    if  sl.button('Killian'):
+    sl.write(reponse1)
+else:
+    if sl.button('Killian'):
         mask = killian == 'O'
-    elif sl.button('Angela'):
+        film_filtre = films[mask]
+        if len(film_filtre) == 0:
+            sl.write(reponse4)
+        else:
+            film_choisi = rd.choice(film_filtre.tolist())
+            if len(films) < 20:
+                sl.write(reponse3)
+            sl.write(reponse2 + film_choisi)
+            film.loc[film['films'] == film_choisi, 'Killian'] = 'X'
+            index_film = film[film['films'] == film_choisi].index[0]
+            val_killian = film.loc[index_film, 'Killian']
+            val_angela = film.loc[index_film, 'Angela']
+            if val_angela == 'X' and val_killian == 'X':
+                film = film[film['films'] != film_choisi]
+            feuille.clear()
+            set_with_dataframe(feuille, film)
+
+    if sl.button('Angela'):
         mask = angela == 'O'
-    elif sl.button('nous deux'):
+        film_filtre = films[mask]
+        if len(film_filtre) == 0:
+            sl.write(reponse4)
+        else:
+            film_choisi = rd.choice(film_filtre.tolist())
+            if len(films) < 20:
+                sl.write(reponse3)
+            sl.write(reponse2 + film_choisi)
+            film.loc[film['films'] == film_choisi, 'Angela'] = 'X'
+            index_film = film[film['films'] == film_choisi].index[0]
+            val_killian = film.loc[index_film, 'Killian']
+            val_angela = film.loc[index_film, 'Angela']
+            if val_angela == 'X' and val_killian == 'X':
+                film = film[film['films'] != film_choisi]
+            feuille.clear()
+            set_with_dataframe(feuille, film)
+
+    if sl.button('Nous deux'):
         mask = (killian == 'O') & (angela == 'O')
-    
-    film_filtre = films[mask]
-    
-    
-    if len(film_filtre) == 0:
-        print(reponse4)
-    else:
-        film_choisi = rd.choice(film_filtre.tolist())
-    
-        if len(films) < 20:
-            print(reponse3)
-        print(reponse2 + "' " + film_choisi + "'")
-        if sl.button('Killian'):
-            film.loc[film['films'] == film_choisi, 'Killian'] = 'X'
-        elif sl.button('Angela'):
-            film.loc[film['films'] == film_choisi, 'Angela'] = 'X'
-        elif sl.button('nous deux'):
+        film_filtre = films[mask]
+        if len(film_filtre) == 0:
+            sl.write(reponse4)
+        else:
+            film_choisi = rd.choice(film_filtre.tolist())
+            if len(films) < 20:
+                sl.write(reponse3)
+            sl.write(reponse2 + film_choisi)
             film.loc[film['films'] == film_choisi, 'Killian'] = 'X'
             film.loc[film['films'] == film_choisi, 'Angela'] = 'X'
-        
-        index_film = film[film['films'] == film_choisi].index[0]
-    
-        val_killian = film.loc[index_film, 'Killian']
-    
-        val_angela = film.loc[index_film, 'Angela']
-    
-        if val_angela == 'X' and val_killian == 'X':
-            film = film[film['films'] != film_choisi]
-feuille.clear()
-feuille.update([film.columns.tolist()] + film.values.tolist())
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+            index_film = film[film['films'] == film_choisi].index[0]
+            val_killian = film.loc[index_film, 'Killian']
+            val_angela = film.loc[index_film, 'Angela']
+            if val_angela == 'X' and val_killian == 'X':
+                film = film[film['films'] != film_choisi]
+            feuille.clear()
+            set_with_dataframe(feuille, film)
