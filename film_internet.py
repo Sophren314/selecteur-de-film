@@ -39,8 +39,6 @@ films = film['films']
 killian = film['Killian']
 angela = film['Angela']
 
-sl.snow()
-
 sl.title('Sélecteur de film 🎬')
 
 
