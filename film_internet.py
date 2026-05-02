@@ -12,10 +12,6 @@ import gspread as gs
 import streamlit as sl
 from gspread_dataframe import set_with_dataframe
 
-import url('https://fonts.googleapis.com/css2?family=NOM_DE_LA_POLICE&display=swap');
-* {
-    font-family: 'Cinzel', serif;
-}
 
 sl.markdown("""
     <style>
