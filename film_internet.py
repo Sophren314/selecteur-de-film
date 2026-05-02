@@ -22,7 +22,8 @@ sl.markdown("""
     }
     .stButton > button {
     background-color: #F0FFFF;
-    color: blue;
+    opacity: 0.8;
+    color: black;
     border-radius:20px;
     border: none;
     }
