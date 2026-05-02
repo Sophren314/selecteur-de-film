@@ -2,8 +2,8 @@
 backgroundColor = "#D03533"
 textColor = "#CEDCDC"
 
-.slButton > button {
-    backgroud-color: #FF4B4B;
+.stButton > button {
+    background-color: #FF4B4B;
     color: blue;
     border-radius:20px
     border: none;
