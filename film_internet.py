@@ -22,7 +22,6 @@ sl.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-sl.markdown("# 🔥🎬🔥")
 
 credentials = sl.secrets["gcp_service_account"]
 client = gs.service_account_from_dict(credentials)
