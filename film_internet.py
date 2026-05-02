@@ -12,6 +12,10 @@ import gspread as gs
 import streamlit as sl
 from gspread_dataframe import set_with_dataframe
 
+* {
+    font-family: '𝙲𝙷𝙰𝚂𝚂𝙴', sans-serif;
+}
+
 sl.markdown("""
     <style>
     .stApp {
