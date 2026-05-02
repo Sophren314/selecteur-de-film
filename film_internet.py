@@ -11,8 +11,8 @@ import pandas as pd
 import gspread as gs
 import streamlit as sl
 
-credentials = '/Users/killianboutal/Desktop/programmation/selecteur-film-ec404726c593.json'
-client = gs.service_account(filename=credentials)
+credentials = sl.secrets["gcp_service_account"]
+client = gs.service_account_from_dict(credentials)
 sheet= client.open('liste de film')
 feuille = sheet.sheet1
 
