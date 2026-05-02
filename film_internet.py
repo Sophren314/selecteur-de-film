@@ -40,6 +40,7 @@ killian = film['Killian']
 angela = film['Angela']
 
 sl.title('Sélecteur de film 🎬')
+sl.spinner()
 
 
 if len(films) == 0:
