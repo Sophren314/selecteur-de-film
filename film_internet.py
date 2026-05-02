@@ -29,6 +29,8 @@ angela = film['Angela']
 
 sl.title('Sélecteur de film 🎬')
 
+sl.balloons()
+
 if len(films) == 0:
     sl.write(reponse1)
 else:
@@ -40,7 +42,7 @@ else:
         else:
             film_choisi = rd.choice(film_filtre.tolist())
             if len(films) < 20:
-                sl.warning(reponse3)
+                sl.write(reponse3)
             sl.write(reponse2 + film_choisi)
             film.loc[film['films'] == film_choisi, 'Killian'] = 'X'
             index_film = film[film['films'] == film_choisi].index[0]
