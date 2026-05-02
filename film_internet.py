@@ -35,12 +35,20 @@ reponse3 = 'pense a ajouter des films nigaud'
 reponse4 = 'vous avez tout regarder ensemble !!'
 
 film = pd.DataFrame(feuille.get_all_records())
+
 films = film['films']
 killian = film['Killian']
 angela = film['Angela']
 
 sl.title('Sélecteur de film 🎬')
-sl.spinner()
+
+col1,col2,col3 = sl(columns(3)
+with col1:
+    pass
+with col2:
+    sl.button('Angela')
+with col3:
+    pass
 
 
 if len(films) == 0:
