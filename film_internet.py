@@ -134,7 +134,7 @@ fig = px.bar(graph, x='Personne', y='Films vus', title='Films vus par personne',
             color_discrete_sequence = ['#FFFFFF','FF80FF'])
 fig.update_layout(paper_bgcolor='rgba(0,0,0,0)',
                  width=300, height=400)
-fig.update_traces(marker_line_width=4)
+fig.update_traces(marker_line_width=1.5)
 sl.plotly_chart(fig)
 
 
