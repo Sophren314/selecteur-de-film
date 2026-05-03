@@ -130,7 +130,8 @@ graph = pd.DataFrame({
     'Films vus': [killian_vu,angela_vu]
 })
 
-fig = px.bar(graph, x='Personne', y='Films vus')
+fig = px.bar(graph, x='Personne', y='Films vus', title='Films vus par personne',
+            color_discrete_sequence = ['#FFFFFF','FF80FF'])
 sl.plotly_chart(fig)
 
 
