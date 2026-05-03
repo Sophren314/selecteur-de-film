@@ -33,7 +33,7 @@ sl.markdown("""
     }
     .stButton > button:hover {
         tranform: scale(1.1);
-        box-shadow: 0px 0px 15àx #FF4B4B;
+        box-shadow: 0px 0px 15px #FF4B4B;
     }
     </style>
 """, unsafe_allow_html=True)
