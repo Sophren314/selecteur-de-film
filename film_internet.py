@@ -11,6 +11,7 @@ import pandas as pd
 import gspread as gs
 import streamlit as sl
 from gspread_dataframe import set_with_dataframe
+import plotly.express as px
 
 
 sl.markdown("""
@@ -30,6 +31,8 @@ sl.markdown("""
 
     </style>
 """, unsafe_allow_html=True)
+
+sl.plotly_chart(fig)
 
 
 credentials = sl.secrets["gcp_service_account"]
