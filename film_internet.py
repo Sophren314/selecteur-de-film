@@ -128,8 +128,8 @@ killian_vu = len(film[film['Killian'] == 'X'])
 angela_vu = len(film[film['Angela'] == 'X'])
 
 graph = pd.DataFrame({
-    'Personne':['Killian','Angela']
-    'Films vus':[killian_vu,angela_vu]
+    'Personne': ['Killian','Angela']
+    'Films vus': [killian_vu,angela_vu]
 })
 
 fig = px.bar(graph, x='Personne', y='Films vus')
