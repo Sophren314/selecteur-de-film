@@ -32,8 +32,6 @@ sl.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-sl.plotly_chart(fig)
-
 
 credentials = sl.secrets["gcp_service_account"]
 client = gs.service_account_from_dict(credentials)
