@@ -123,3 +123,5 @@ with col2:
                 film = film[film['films'] != film_choisi]
             feuille.clear()
             set_with_dataframe(feuille, film)
+
+
