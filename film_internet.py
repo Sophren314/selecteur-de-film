@@ -133,7 +133,7 @@ graph = pd.DataFrame({
 fig = px.bar(graph, x='Personne', y='Films vus', title='Films vus par personne',
             color_discrete_sequence = ['#FFFFFF','FF80FF'])
 fig.update_layout(paper_bgcolor='rgba(0,0,0,0)',
-                 width=400, height=300)
+                 width=400, height=400)
 sl.plotly_chart(fig)
 
 
