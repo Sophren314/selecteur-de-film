@@ -128,7 +128,7 @@ killian_vu = len(film[film['Killian'] == 'X'])
 angela_vu = len(film[film['Angela'] == 'X'])
 
 graph = pd.DataFrame({
-    'Personne': ['Killian','Angela']
+    'Personne': ['Killian','Angela'],
     'Films vus': [killian_vu,angela_vu]
 })
 
