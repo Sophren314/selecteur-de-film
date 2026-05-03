@@ -100,23 +100,23 @@ with col1:
     pass
 with col3:
     pass
-    with col2:
-        if sl.button('Nous deux'):
-            mask = (killian == 'O') & (angela == 'O')
-            film_filtre = films[mask]
-            if len(film_filtre) == 0:
-                sl.write(reponse4)
-            else:
-                film_choisi = rd.choice(film_filtre.tolist())
-                if len(films) < 20:
-                    sl.write(reponse3)
-                sl.write(reponse2 + film_choisi)
-                film.loc[film['films'] == film_choisi, 'Killian'] = 'X'
-                film.loc[film['films'] == film_choisi, 'Angela'] = 'X'
-                index_film = film[film['films'] == film_choisi].index[0]
-                val_killian = film.loc[index_film, 'Killian']
-                val_angela = film.loc[index_film, 'Angela']
-                if val_angela == 'X' and val_killian == 'X':
-                    film = film[film['films'] != film_choisi]
-                feuille.clear()
-                set_with_dataframe(feuille, film)
+with col2:
+    if sl.button('Nous deux'):
+        mask = (killian == 'O') & (angela == 'O')
+        film_filtre = films[mask]
+        if len(film_filtre) == 0:
+            sl.write(reponse4)
+        else:
+            film_choisi = rd.choice(film_filtre.tolist())
+            if len(films) < 20:
+                sl.write(reponse3)
+            sl.write(reponse2 + film_choisi)
+            film.loc[film['films'] == film_choisi, 'Killian'] = 'X'
+            film.loc[film['films'] == film_choisi, 'Angela'] = 'X'
+            index_film = film[film['films'] == film_choisi].index[0]
+            val_killian = film.loc[index_film, 'Killian']
+            val_angela = film.loc[index_film, 'Angela']
+            if val_angela == 'X' and val_killian == 'X':
+                film = film[film['films'] != film_choisi]
+            feuille.clear()
+            set_with_dataframe(feuille, film)
