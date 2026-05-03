@@ -135,6 +135,7 @@ fig = px.bar(graph, x='Personne', y='Films vus', title='Films vus par personne',
 fig.update_layout(paper_bgcolor='rgba(0,0,0,0)',
                  width=300, height=400)
 fig.update_traces(marker_line_width=1.5)
+sl.plotly_chart(fig, use_container_width=True)
 sl.plotly_chart(fig)
 
 
