@@ -13,6 +13,12 @@ import streamlit as sl
 from gspread_dataframe import set_with_dataframe
 import plotly.express as px
 
+if 'film_choisi' not in sl.session_state:
+    sl.session_state.film_choisi = ''
+if 'film_en_attente' not in sl.session_state:
+    sl.session_state.film_en_attente = False
+if 'utilisateur' not in sl.session_state:
+    sl.session_state.utilisateur = ''
 
 sl.markdown("""
     <style>
