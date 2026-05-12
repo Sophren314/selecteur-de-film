@@ -144,7 +144,7 @@ if sl.session_state.film_en_attente == True:
 killian_vu = len(film[film['Killian'] == 'X'])
 angela_vu = len(film[film['Angela'] == 'X'])
 
-sl.metric(label='nombre de films restant' , value = len(films))
+sl.metric(label='il reste au total' , value = len(films))
 
 graph = pd.DataFrame({
     'Personne': ['Killian', 'Angela'],
