@@ -146,7 +146,7 @@ angela_vu = len(film[film['Angela'] == 'X'])
 
 rang1,rang2,rang3 = sl.columns(3)
 with rang1:
-    sl.metric(label='Angela il te reste :' , value = len(film[film['Angela'] == 'O']))
+    sl.metric(label='Angela il te reste :' , value = len(film[film['Angela'] == 'O']) , color='blue')
 with rang2:
     sl.metric(label='il reste au total :' , value = len(films))
 with rang3:
