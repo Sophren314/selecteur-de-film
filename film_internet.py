@@ -152,7 +152,7 @@ with rang2:
 with rang3:
     sl.metric(label='Killian il te reste :' , value = len(film[film['Killian'] == 'O']))
 with rang4:
-    sl.button('google sheets','https://docs.google.com/spreadsheets/d/1DvTWK4fSNbZG0o3Cwkm7OM2OXutCu07yZcALjCphs0E/edit?gid=0#gid=0')
+    sl.link_button('google sheets','https://docs.google.com/spreadsheets/d/1DvTWK4fSNbZG0o3Cwkm7OM2OXutCu07yZcALjCphs0E/edit?gid=0#gid=0')
 
 graph = pd.DataFrame({
     'Personne': ['Killian', 'Angela'],
