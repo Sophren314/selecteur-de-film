@@ -144,6 +144,8 @@ if sl.session_state.film_en_attente == True:
 killian_vu = len(film[film['Killian'] == 'X'])
 angela_vu = len(film[film['Angela'] == 'X'])
 
+sl.metric(label='nombre de films restant' , value = len(films))
+
 graph = pd.DataFrame({
     'Personne': ['Killian', 'Angela'],
     'Films vus': [killian_vu, angela_vu]
@@ -155,5 +157,3 @@ fig = px.bar(graph, x='Personne', y='Films vus', title='Films vus par personne',
 fig.update_layout(paper_bgcolor='rgba(0,0,0,0)')
 fig.update_traces(marker_line_width=1.5)
 sl.plotly_chart(fig, use_container_width=True)
-
-sl.metric(label='nombre de films restant' , value = len(films))
