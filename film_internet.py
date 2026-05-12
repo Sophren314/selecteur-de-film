@@ -144,14 +144,15 @@ if sl.session_state.film_en_attente == True:
 killian_vu = len(film[film['Killian'] == 'X'])
 angela_vu = len(film[film['Angela'] == 'X'])
 
-rang1,rang2,rang3 = sl.columns(3)
+rang1,rang2,rang3,rang4 = sl.columns(4)
 with rang1:
     sl.metric(label='Angela il te reste :' , value = len(film[film['Angela'] == 'O']))
 with rang2:
     sl.metric(label='il reste au total :' , value = len(films))
 with rang3:
     sl.metric(label='Killian il te reste :' , value = len(film[film['Killian'] == 'O']))
-    
+with rang4:
+    sl.button('google sheets','https://docs.google.com/spreadsheets/d/1DvTWK4fSNbZG0o3Cwkm7OM2OXutCu07yZcALjCphs0E/edit?gid=0#gid=0')
 
 graph = pd.DataFrame({
     'Personne': ['Killian', 'Angela'],
