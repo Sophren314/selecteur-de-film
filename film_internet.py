@@ -149,7 +149,8 @@ with rang1:
     sl.metric(label='il reste au total :' , value = len(films))
 with rang2:
     sl.metric(label='Angela il te reste :' , value = len(film[film['Angela'] == 'O']))
-
+with rang3:
+    sl.metric(label='Killian il te reste :' , value = len(film[film['Killian'] == 'O']))
     
 
 graph = pd.DataFrame({
